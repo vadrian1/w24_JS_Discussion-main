@@ -3,7 +3,8 @@ let pokemonList = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","C
 // Answers
 
 // Question 1
-
+document.getElementById("host-name").innerHTML = "Adrian Vergara"
+document.getElementById("collaborator-name").innerHTML = "Arya Goel"
 
 
 
@@ -16,7 +17,11 @@ let pokemonList = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","C
 // Question 3
 // Try change event first
 // There is another event which fires for every character. This is what we want to use.
-
+if (firstName === "John") {
+    lastNameInput.value = "Doe";
+} else {
+    lastNameInput.value = "";
+}
 
 
 // Question 4
@@ -28,7 +33,18 @@ let pokemonList = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","C
 // Question 5
 // Try change event first
 // There is another event which fires for every character. This is what we want to use.
+let passwords = document.getElementById("password")
+let passwordConfirm = document.getElementById("confirm_password")
+passwords.addEventListener("oninput", checkPasswords(passwords, passwordConfirm))
+passwordConfirm.addEventListener("oninput", checkPasswords(passwords, passwordConfirm))
 
+function checkPasswords(passwords, passwordConfirm){
+    if(passwords.value == passwordConfirm.value){
+        document.getElementById("password-alert").innerHTML = "Password matches"
+    } else{
+        document.getElementById("password-alert").innerHTML = "Password does not match"
+    }
+}
 
 
 
